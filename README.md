@@ -12,10 +12,20 @@ In addition, we provide a Python file that can be used to generate predictions f
 
 If you want, you can train and predict new datasets from the structure of the model we proposed.
 
-- [Data](https://github.com/bmil-jnu/hERGAT/tree/main/Data/hERGAT%20dataset)
-- [hERG source code](https://github.com/bmil-jnu/hERGAT/tree/main/Model/hERGAT)
-- [Atom- and molecule-level interaction analysis](https://github.com/DOHYEON7222/hERGAT/tree/main/Results)
-- [Figure used in this paper](https://github.com/bmil-jnu/hERGAT/tree/main/Figure)
+- [Data](https://github.com/DOHYEON7222/hERGAT/tree/main/data)
+  
+### 데이터 & 가중치 파일
+현재 용량 문제로 인하여 github에는 올릴 수 없으니 google drive에 들어가셔서 직접 다운로드 받으셔야합니다.
+데이터 파일은 data폴더에 위치해야하며, 모델 가중치 파일은 ckpt라는 폴더안에 위치해야합니다
+
+| 파일명 | 다운로드 링크 | 저장 위치 |
+|--------|--------------|-----------|
+| `hERGAT_best.pt` | [Google Drive 링크](https://drive.google.com/file/d/1-t4sCvtmwkIuyVUBGS0XRw7IB3HeiP7I/view?usp=drive_link) | `outputs/paper_run1/ckpt/hERGAT_best.pt` |
+| `hERGAT_final_dataset.csv` | [Google Drive 링크](https://drive.google.com/file/d/1kw66fRQmYfPPP_yMlEF_xvaggCt8Hq3G/view?usp=sharing) | `data/hERGAT_final_dataset.csv` |
+
+---
+- [hERG source code](https://github.com/DOHYEON7222/hERGAT/tree/main/hergat)
+- [Atom- and molecule-level interaction analysis](https://github.com/DOHYEON7222/hERGAT/tree/main/outputs/paper_run1/figures)
 
 ## Dependency
 
