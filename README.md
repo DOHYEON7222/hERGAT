@@ -2,7 +2,18 @@
 Title: **hERGAT: Predicting hERG blockers using graph attention mechanism through atom- and molecule-level interaction analysis**  
 Authors: *Dohyeon Lee, Sunyong Yoo*
 
+---
 
+## Folder structure
+
+- `hergat/` : model + RDKit preprocessing + checkpoint + visualization utilities
+- `scripts/` :
+  - `train.py` : training + metrics export
+  - `make_topk_figures.py` : TOP-5 figure export (molecule + atom level)
+  - `run_all.py` : **one-command** pipeline (train → figures → summary)
+- `data/` : hERGAT_final_dataset (CSV)
+
+---
 
 ## Description
 
@@ -26,6 +37,32 @@ If you want, you can train and predict new datasets from the structure of the mo
 ---
 - [hERG source code](https://github.com/DOHYEON7222/hERGAT/tree/main/hergat)
 - [Atom- and molecule-level interaction analysis](https://github.com/DOHYEON7222/hERGAT/tree/main/outputs/paper_run1/figures)
+
+
+## One-command run (train + evaluation + TOP-5 figures)
+
+From the project root:
+
+### terminal 
+```bat
+python scripts\run_all.py ^
+  --data_csv data\hERGAT_final_dataset.csv ^
+  --out_dir outputs\paper_run1 ^
+  --smiles_col SMILES ^
+  --label_col Class ^
+  --device cuda:0 ^
+  --top_k 5
+
+```
+Outputs (example):
+- `outputs/paper_run1/ckpt/hERGAT_best.pt`
+- `outputs/paper_run1/metrics.json`
+- `outputs/paper_run1/roc_curve.json`, `outputs/paper_run1/pr_curve.json`
+- `outputs/paper_run1/figures/topk_predictions.csv`
+- `outputs/paper_run1/figures/topk_figures_summary.json`
+- `outputs/paper_run1/paper_run_summary.json`
+
+---
 
 ## Dependency
 
